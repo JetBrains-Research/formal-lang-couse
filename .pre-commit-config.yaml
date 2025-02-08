@@ -5,3 +5,15 @@ repos:
       - id: check-yaml
       - id: end-of-file-fixer
       - id: trailing-whitespace
+  - repo: local
+    hooks:
+      - id: check-format
+        name: check-format
+        entry: rye fmt --check
+        language: system
+        types: [python]
+      - id: lint
+        name: lint
+        entry: rye lint
+        language: system
+        types: [python]
